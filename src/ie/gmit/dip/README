@@ -1,0 +1,33 @@
+//////// README /////////
+
+Hello,
+
+There are some important things to note about this project listed below.
+
+1) 
+
+The main programme sits in InsuranceProgram.java. We are aware that this class violates 
+the SRP (Single Responsibility Principle) as all programme logic is contained within this same
+class. However, due to the scope of this project, the large number of test classes it contains,
+and the simplicity of the main programme, we deemed this a necessary evil to avoid package 
+level clutter and improve readability (for our own development purposes). This was a design 
+choice.
+
+2) 
+
+Many conflicts were encountered using Junit Jupiter and our edition of eclipse.
+Many of the imports and annotations as per our lab materials/instructional videos were
+already deprecated by the time of writing of this project. (JUnit Platform for the Test Class 
+runner particularly). To work around this we had to update our Runner to run with Suite 
+(from JUnit 4), as per instructional resources we found online and others having similar
+problems. As a result of this, Our Test Suite Runner (Test Runner) was not compatible with 3 of
+our test classes. Our Test Runner does not recognise the @ParameterizedTest Annotation as a 
+runnable method- so the Test class which makes use of this annotation, 
+"AccidentsCheckerTestClass", is omitted from the Test Suite Runner. However, this test can be 
+run manually on its own, and passes. Similarly, two more test classes- "AccidentsInputTestClass" 
+and "AgeInputTestClass" have also been omitted from the Test Suite Runner, as the Exceptions 
+within them (which are the purpose of the tests) are not thrown when called through the Test 
+Runner, resulting in the tests failing. However, these two tests can also be run manually on 
+their own, and they both pass.
+
+
